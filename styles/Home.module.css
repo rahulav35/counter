@@ -1,0 +1,43 @@
+.container {
+  padding: 0 2rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #efefef;
+}
+
+.btn {
+  padding-inline: 3rem;
+  padding-block: 10px;
+  border-radius: 10px;
+  background-color: navy;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+.main {
+  width: 60%;
+  height: 30%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.button {
+  padding-inline: 3rem;
+  padding-block: 10px;
+  border-radius: 10px;
+  background-color: navy;
+  color: white;
+}
+
+.h1 {
+  color: green;
+  font-size: 20px;
+  font-weight: 600;
+}
