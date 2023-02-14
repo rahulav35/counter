@@ -9,56 +9,79 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import dynamic from "next/dynamic";
 
- function Home() {
+function Home() {
   const [count, setCount] = useState<any>("");
   const { address: user, isConnected } = useAccount();
   const { openConnectModal } = useConnectModal();
   const { openAccountModal } = useAccountModal();
 
-  const address = "0xcf5DFD919621aEb00e7959FFf627D142A086889f";
+  const address = "0x7B93b3E054db8674e9c2f2B78907cABe69A759Ba";
   const abi = [
     {
-      "inputs": [],
-      "name": "decrement",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      inputs: [],
+      name: "automate",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
     },
     {
-      "anonymous": false,
-      "inputs": [],
-      "name": "Decremented",
-      "type": "event"
+      inputs: [],
+      name: "decrement",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
     },
     {
-      "inputs": [],
-      "name": "increment",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
+      inputs: [],
+      stateMutability: "nonpayable",
+      type: "constructor",
     },
     {
-      "anonymous": false,
-      "inputs": [],
-      "name": "Incremented",
-      "type": "event"
+      anonymous: false,
+      inputs: [],
+      name: "Decremented",
+      type: "event",
     },
     {
-      "inputs": [],
-      "name": "count",
-      "outputs": [
+      inputs: [],
+      name: "increment",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      anonymous: false,
+      inputs: [],
+      name: "Incremented",
+      type: "event",
+    },
+    {
+      inputs: [],
+      name: "checkAutomationStatus",
+      outputs: [
         {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
+          internalType: "bool",
+          name: "",
+          type: "bool",
+        },
       ],
-      "stateMutability": "view",
-      "type": "function"
-    }
-  ]
-  ;
-
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "count",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+  ];
   const listenIncrement = async () => {
     const provider = new ethers.providers.JsonRpcProvider(
       "https://eth-goerli.g.alchemy.com/v2/k8P1hD80FRytUA1pAPhSansQ1VbC2nVI"
@@ -146,4 +169,4 @@ import dynamic from "next/dynamic";
     </div>
   );
 }
-export default dynamic(()=>Promise.resolve(Home),{ssr:false})
+export default dynamic(() => Promise.resolve(Home), { ssr: false });
